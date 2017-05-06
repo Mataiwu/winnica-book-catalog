@@ -1,0 +1,26 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+<h2> Szczegóły </h2>
+
+<h3><strong>Tytuł:</strong> {{book.title}}</h3>
+
+<h3><strong> Autor:</strong>
+{% for author in book.author.all %} <a href="#">{{author}}</a></h3>
+{% endfor %}
+<p><strong>Kategoria:
+{% for kat in book.cathegory.all %}
+</strong> {{kat}}</p>
+{% endfor %}
+
+<p><strong>ISBN: </strong>{{book.isbn}}</p>
+<ul>
+<li><a href="{% url 'book-update' pk=book.id %}"> Edytuj książkę </a></li>
+<li><a href="{% url 'book-delete' pk=book.id %}"> USUŃ książkę </a></li>
+</ul>
+{% endblock %}
+
+
+
+

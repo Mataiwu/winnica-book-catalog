@@ -55,6 +55,7 @@ name=string
 """
 from django.db import models
 import uuid
+from django.core.urlresolvers import reverse
 
 
 class Book(models.Model):
@@ -72,7 +73,7 @@ class Book(models.Model):
 	language=models.ManyToManyField('Language',
 									blank=True,
 									help_text="Wybierz język")
-	cathegory=models.ManyToManyField('Cathegory', 
+	cathegory=models.ManyToManyField('Cathegory', default="---",
 									help_text="wybierz kategorię")
 
 
@@ -82,6 +83,9 @@ class Book(models.Model):
 
 	def __str__(self):
 		return self.title
+
+	def get_absolute_url(self):
+		return reverse('book-detail', args=[str(self.id)])
 
 	def display_cathegory(self):
 		
@@ -94,9 +98,7 @@ class Book(models.Model):
 	display_language.short_description="Języki"
 
 	def display_author(self):
-		authors=[]
 		
-
 		return '; '.join(author.last_name+", "+author.first_name[0]+"." 
 						for author in self.author.all()) 
 	display_author.short_description="autorki/rzy"
@@ -125,6 +127,9 @@ class Author(models.Model):
 
 	def __str__(self):
 		return '%s, %s'%(self.last_name, self.first_name)
+
+	def get_absolute_url(self):
+		return reverse('author-detail', args=[str(self.id)])
 	
 # może lepiej zachować jedną listę osób (autor/tłumacz?)
 class Translator(models.Model):

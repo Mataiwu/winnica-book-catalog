@@ -1,0 +1,24 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+<h2> Autorki/rzy</h2>
+
+{% if author_list %}
+
+<ul>
+{% for author in author_list %}
+<li>
+<a href="{{ author.get_absolute_url }}">{{author}}</a><br>
+
+
+{% endfor %}
+</li>
+
+{% else %}
+
+<p>Nie ma tu żadnych autorek ani autorów</p>
+
+{% endif %}
+
+{% endblock %}

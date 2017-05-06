@@ -2,8 +2,10 @@
 <html lang='pl'>
 	<head>
 	{% load staticfiles %}
+	<link rel="stylesheet" type="text/css" href="{%	static 'css/normalize.css' %}">
+	<link rel="stylesheet" type="text/css" href="{%	static 'css/grid.css' %}">
 	<link rel="stylesheet" type="text/css" href="{%	static 'css/style.css' %}">
-	<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,300italic' rel='stylesheet' type='text/css'>
+
 	
 	{% block title %} 
 	<title>Winnicki katalog książek</title>
@@ -15,24 +17,30 @@
 
 	<body>
 		<div class="container">
-		<div class="welcome-msg">
+		<div class="header-box">
 		{% block header %}
 		<h1>Winnicki Katalog książek</h1>
 		{% endblock %}
 		</div>
-		<nav class="nav-bar">
+		
+		<nav class="navigation-panel">
 		{% block sidebar %}
 			<ul>
-			<li><a href="#">Książki</a></li>
-			<li><a href="#"> Autorzy </a></li>
+			<li><a href="{% url 'index'%}">Strona główna</a></li>
+			<li><a href="{% url 'books'%}">Książki</a></li>
+			<li><a href="{% url 'authors' %}"> Autorzy </a></li>
+			<li><a href="{% url 'book-create' %}"> Dodaj książkę </a></li>
+
 			</ul>
 		{% endblock %}
 
 
 		</nav>
-		<section class="main-content">
+		
+		<section class="main-box">
+
 			{% block content %}
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			<p>Lorem ipsum dolor sit amet, consectetur acpisicing elit, sed do eiusmod
 			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
@@ -41,9 +49,8 @@
 			{% endblock %} 
 
 		</section>
-
+		
 		</div>
-
 
 	</body>
 
