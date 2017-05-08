@@ -15,7 +15,7 @@
 {% for book in author.book_set.all %}
 <ul>
 <li>
-<a href="#">{{book.title}}</a>
+<a href="{{book.get_absolute_url}}">{{book.title}}</a>
 </li>
 </ul>
 

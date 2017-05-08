@@ -46,4 +46,8 @@ class BookUpdate(UpdateView):
 	model=Book
 	fields='__all__'
 
+class AuthorCreate(CreateView):
+	model=Author
+	fields='__all__'
+
 # Create your views here.
