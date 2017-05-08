@@ -19,7 +19,8 @@
 <div class="col span-1-of-2">
 	
 	<h2>nie ma autora?</h2>
-	<a href="{% url 'author-create' %}">Dodaj Autorkę</a>
+	<a href="{% url 'author-create' %}?next={{ request.path|urlencode }}">Dodaj Autorkę</a>
+	
 
 	
 </div>

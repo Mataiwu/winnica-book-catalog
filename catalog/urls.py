@@ -16,5 +16,7 @@ urlpatterns=[
 		 name='book-delete'),
 	url(r'^ksiazka/(?P<pk>\d+)/edytuj/$', views.BookUpdate.as_view(), 
 		name='book-update'),
-	url(r'^ksiazka/nowa/autor-dodaj/$', views.AuthorCreate.as_view(), name='author-create'),
+	url(r'^autor/dodaj/$', views.author_create, name='author-create'),
+	url(r'^autor/(?P<pk>\d+)/usun/$', views.AuthorDelete.as_view(), name='author-delete'),
+	#url(r'^ksiazka/nowa/autor-dodaj/$', views.AuthorCreate.as_view(), name='author-create'),
 	]
