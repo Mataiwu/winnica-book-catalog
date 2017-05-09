@@ -88,6 +88,29 @@ a:active{
 color: #333;
 
 }
+
+.back-button a {
+	border:1px solid #333;
+	display: inline-block;
+	margin: 5px;
+	margin-left: 0px;
+
+}
+
+input[type=submit] {
+	background-color: #fff;
+	color: #555;
+	display: inline-block;
+	border: 1px solid #333;
+	padding: 3px;
+	font-size: 80%
+	}
+input[type=submit]:hover,
+input[type=submit]:active {
+	background-color: #ddd;
+}
+
+
 /*--------------------------------------------
 CONTAINER
 ---------------------------------------------*/

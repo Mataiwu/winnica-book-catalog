@@ -7,8 +7,11 @@
 <form action="" method="POST">
 {% csrf_token %}
 <input type="submit" action=""  value="Potwierdzam" />
+<br>
+<span class="back-button">
+<a href="{% url 'author-detail' pk=author.id %}"> Cofnij!</a>
+</span>
 
 {% endblock %}
 
 	
-</form>
