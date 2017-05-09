@@ -58,8 +58,9 @@ def author_create(request):
 			f_name=form.cleaned_data['first_name']
 			l_name=form.cleaned_data['last_name']
 			next = request.POST.get('next', '/')
-			author, created=Author.objects.get_or_create(first_name=f_name, last_name=l_name)
-			
+			author, created=Author.objects.get_or_create(first_name=f_name,
+														last_name=l_name)
+
 			return HttpResponseRedirect(next)
 
 	else:
@@ -78,4 +79,3 @@ class AuthorDelete(DeleteView):
 	#fields='__all__'
 
 # Create your views here.
-	
