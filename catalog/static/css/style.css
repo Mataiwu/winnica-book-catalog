@@ -53,15 +53,15 @@ label {
 td{
 	padding-top: 3px;
 	padding-left: 10px;
-	
-	
+
+
 }
 .helptext {
 	font-size: 50%;
 	border-bottom: 1px solid #ccc;
 	border-left:1px solid #ccc;
 	padding:3px;
-	margin-bottom: 3px; 
+	margin-bottom: 3px;
 }
 
 /*------------------------------------------
@@ -71,7 +71,7 @@ a{
 	font-size: 80%;
 	margin: 0 10px;
 	padding: 5px;
-	
+
 	border: none;
 }
 
@@ -80,7 +80,7 @@ a:visited{
 
 	color: #555;
 	text-decoration:none;
-	
+
 }
 
 a:hover,
@@ -132,7 +132,7 @@ NAVIGATION BAR
 ------------------------------------------*/
 nav {
 	padding: 10px;
-	
+
 	border-bottom: 1px solid #333;
 }
 
@@ -140,14 +140,18 @@ nav {
 	display: inline-block;
 }
 
-
+#username {
+	border-left: 1px solid #aaa;
+	border-bottom: 1px solid #aaa;
+	padding: 5px 7px;
+}
 
 /*-------------------------------------------------
 MAIN BOX
 -----------------------------------------*/
 
 .main-box {
-	
+
 	padding:10px;
 }
 

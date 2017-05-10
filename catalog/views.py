@@ -6,8 +6,8 @@ from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.urls import reverse_lazy
 from django.http import HttpResponseRedirect
 from .forms import CreateAuthorForm
-
-
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 def index(request):
 	"""
 	shows basic Catalog data, welcome message and navigation panel
@@ -37,10 +37,10 @@ class AuthorDetailView(generic.DetailView):
 class AuthorListView(generic.ListView):
 	model=Author
 
-class BookCreate(CreateView):
+class BookCreate(LoginRequiredMixin, CreateView):
 	model=Book
 	fields=['author', 'title', 'published', 'publisher', 'cathegory']
-
+	redirect_field_name="book-create"
 class BookDelete(DeleteView):
 	model=Book
 	success_url=reverse_lazy('index')
@@ -49,7 +49,7 @@ class BookUpdate(UpdateView):
 	model=Book
 	fields='__all__'
 
-
+@login_required
 def author_create(request):
 	if request.method=='POST':
 		form=CreateAuthorForm(request.POST)

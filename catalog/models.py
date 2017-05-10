@@ -80,7 +80,7 @@ class Book(models.Model):
 	class Meta:
 		verbose_name="Książka"
 		verbose_name_plural="Książki"
-
+		ordering=["title"]
 	def __str__(self):
 		return self.title
 
