@@ -14,4 +14,9 @@ class CreateAuthorForm(forms.Form):
 	def clean_last_name(self):
 		data=self.cleaned_data['last_name']
 
-		return data 
+		return data
+
+#class CreateBookForm(forms.Form):
+	#define fields
+	#clean fields
+	# return data

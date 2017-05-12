@@ -1,7 +1,7 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-
+<section class="details">
 <h2> Szczegóły </h2>
 
 <h3><strong>Tytuł:</strong> {{book.title}}</h3>
@@ -15,12 +15,12 @@
 {% endfor %}
 
 <p><strong>ISBN: </strong>{{book.isbn}}</p>
+
+<div class="detail-buttons">
 <ul>
 <li><a href="{% url 'book-update' pk=book.id %}"> Edytuj książkę </a></li>
 <li><a href="{% url 'book-delete' pk=book.id %}"> USUŃ książkę </a></li>
 </ul>
+</div>
+</section>
 {% endblock %}
-
-
-
-

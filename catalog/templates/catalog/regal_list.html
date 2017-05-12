@@ -1,0 +1,24 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+<h2>Półki, szafki, regały: </h2>
+
+{% if regal_list %}
+
+<ul>
+{% for regal in regal_list %}
+<li>
+<a href="{{ regal.get_absolute_url }}">{{regal}}</a><br>
+
+
+{% endfor %}
+</li>
+
+{% else %}
+
+<p>Nie ma tu żadnych półek ani regałów</p>
+
+{% endif %}
+
+{% endblock %}

@@ -3,16 +3,16 @@
 {% block content %}
 <section class="details">
 <div class="row author-detail-name">
-<h2>Autor/ka:</h2>
+<h2>Miejsce:</h2>
 </div>
 <div class="row author-detail-box">
 <div class="col span-1-of-2">
 
-<p> {{author.first_name}}, {{author.last_name}}</p>
+<p> {{regal}}</p>
 </div>
 <div class= "col span-1-of-2">
 <h3>Książki:</h3>
-{% for book in author.book_set.all %}
+{% for book in regal.book_set.all %}
 <ul>
 <li>
 <a href="{{book.get_absolute_url}}">{{book.title}}</a>
@@ -20,7 +20,6 @@
 </ul>
 
 {% endfor %}
-<a href="{% url 'author-delete' pk=author.id %}"> Usuń </a>
 </div>
 </div>
 </section>

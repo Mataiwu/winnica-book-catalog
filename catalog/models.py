@@ -75,7 +75,9 @@ class Book(models.Model):
 									help_text="Wybierz język")
 	cathegory=models.ManyToManyField('Cathegory', default="---",
 									help_text="wybierz kategorię")
-
+	place=models.ForeignKey('Regal', blank=True, on_delete=models.SET_NULL,
+							null=True, help_text='Podaj regał')
+	shelf=models.CharField('Półka', max_length=2, blank=True, help_text='półka')
 
 	class Meta:
 		verbose_name="Książka"
@@ -102,7 +104,6 @@ class Book(models.Model):
 		return '; '.join(author.last_name+", "+author.first_name[0]+"."
 						for author in self.author.all())
 	display_author.short_description="autorki/rzy"
-# methods - TODO
 
 
 class BookInstance(models.Model):
@@ -118,12 +119,14 @@ class BookInstance(models.Model):
 
 
 class Author(models.Model):
-	first_name=models.CharField('Imię', max_length=50, help_text="wpisz Imę autorki/a")
-	last_name=models.CharField('Nazwisko', max_length=50, help_text="wpisz nazwisko autorki/a")
+	first_name=models.CharField('Imię', max_length=50,
+	 							help_text="wpisz Imę autorki/a")
+	last_name=models.CharField('Nazwisko', max_length=50,
+	 							help_text="wpisz nazwisko autorki/a")
 
 	class Meta:
-		verbose_name_plural="Autor/ka"
-		verbose_name_plural="Autorki/rzy"
+		verbose_name_plural="Autor_ka"
+		verbose_name_plural="Autorki_rzy"
 
 	def __str__(self):
 		return '%s, %s'%(self.last_name, self.first_name)
@@ -139,8 +142,8 @@ class Translator(models.Model):
 							 	help_text="wpisz nazwisko tłumaczki/a")
 
 	class Meta:
-		verbose_name="Tłmacz/ka"
-		verbose_name_plural="Tłumaczki/e"
+		verbose_name="Tłmacz_ka"
+		verbose_name_plural="Tłumaczki_e"
 
 	def __str__(self):
 		return '%s, %s'%(self.last_name, self.first_name)
@@ -165,3 +168,17 @@ class Cathegory(models.Model):
 
 	def __str__(self):
 		return self.name
+
+
+class Regal(models.Model):
+	name=models.CharField('Nazwa', max_length=40, help_text="numer regału")
+
+	class Meta:
+		verbose_name="Regał"
+		verbose_name_plural="Regały"
+
+	def __str__(self):
+		return "Regał: "+self.name
+		
+	def get_absolute_url(self):
+		return reverse('regal-detail', args=[str(self.id)])

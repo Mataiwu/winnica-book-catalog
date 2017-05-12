@@ -116,7 +116,7 @@ CONTAINER
 ---------------------------------------------*/
 
 .container{
-	width:60%;
+	width:70%;
 	margin: 0 auto;
 }
 
@@ -171,8 +171,32 @@ PAGINATION
 }
 
 /*-------------------------------------
-AUTHOR DETAIL
+DETAILS
 ------------------------------------*/
+
+.detail-buttons{
+
+	margin-top: 20px;
+
+
+}
+.detail-buttons ul li{
+	display: inline-block;
+		margin-right: 15px;
+		background-color: #fff;
+		color: #555;
+		display: inline-block;
+		border: 1px solid #333;
+		padding: 3px;
+		font-size: 80%
+
+}
+
+/*AUTHOR*/
+
 .author-detail-box {
 	width:70%;
 }
+
+
+/*BOOK*/

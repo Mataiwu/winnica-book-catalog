@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 from .models import Book, Author, Translator, Cathegory, Language, BookInstance
-
+from .models import Regal
 
 
 #----------------------------------------
@@ -16,9 +16,6 @@ class BookAdmin(admin.ModelAdmin):
 admin.site.register(Book,BookAdmin)
 
 
-
-
-
 #---------------------------------------
 #BOOK INSTANCE
 #---------------------------------------
@@ -29,9 +26,8 @@ admin.site.register(BookInstance)
 #AUTHOR
 #-----------------------------------
 
-
 admin.site.register(Author)
-
+admin.site.register(Regal)
 admin.site.register(Cathegory)
 admin.site.register(Translator)
 admin.site.register(Language)
