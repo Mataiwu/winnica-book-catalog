@@ -6,6 +6,8 @@ urlpatterns=[
 	url(r'^ksiazki/', views.BookListView.as_view(), name='books'),
 	url(r'^ksiazka/(?P<pk>\d+)$', views.BookDetailView.as_view(),
 		name='book-detail'),
+	url(r'^ksiazka/(?P<pk>\d+)/szczegoly/$', views.BookFullDetailView.as_view(),
+		name='book-detail-full'),
 	url(r'^regaly/', views.RegalListView.as_view(), name='regals'),
 	url(r'^regal/(?P<pk>\d+)$', views.RegalDetailView.as_view(),
 		name='regal-detail'),

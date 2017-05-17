@@ -34,12 +34,14 @@ def index(request):
 
 class BookListView(generic.ListView):
 	model=Book
-	search_fields=['title', 'author']
 	paginate_by=15
-	search_flag=False
 
 class BookDetailView(generic.DetailView):
 	model=Book
+
+class BookFullDetailView(BookDetailView):
+	template_name='catalog/book_detail_full.html'
+
 
 class RegalListView(generic.ListView):
 	model=Regal
@@ -104,13 +106,13 @@ class BookSearchListView(BookListView):
 	#see:http://stackoverflow.com/questions/44017772/how-to-use-q-objects-in-django
 	paginate_by=10
 	search_flag=True
+	template_name='catalog/booksearch_list.html'
 	def get_queryset(self):
 		result=super(BookSearchListView, self).get_queryset()
 		query=self.request.GET.get('q')
 		if query:
 			query_list=query.split()
-			result=result.filter(reduce(operator.and_,
-								filter(
+			result=result.filter(reduce(operator.and_,(
 								Q(title__icontains=q) for q in query_list))
 								)
 
@@ -118,9 +120,10 @@ class BookSearchListView(BookListView):
 #widok do hurtowego pobierania danych
 #
 def pop(request):
-"""
-Add entries to the library from xmls file using openpyxl.
-"""
+	"""
+	Add entries to the library from xmls file using openpyxl.
+
+	"""
 
 
 	translator_obj_list=[]
