@@ -29,17 +29,26 @@
 			<ul>
 			<li><a href="{% url 'index'%}">Strona główna</a></li>
 			<li><a href="{% url 'books'%}">Książki</a></li>
+
 			<li><a href="{% url 'regals'%}">Regały</a></li>
 			<li><a href="{% url 'authors' %}"> Autorzy </a></li>
 			<li><a href="{% url 'book-create' %}"> Dodaj książkę </a></li>
-			<li></li>
+			<li>
+				<form id="searchform" action={% url 'search-list-view' %} method="get">
+					<button class="search-buttons" type="submit"></button>
+					<input class="search-field" id="search-box" name=q type="text" placeholder="wyszukaj tytuł">
+				</form>
+			</li>
+
 			{% if user.is_authenticated %}
+
 			<li id="username">{{ user.get_username }}</li>
 			<li> <a href="{% url 'logout' %}?next={{request.path}}"> Wyloguj</a></li>
 			{% else %}
 			<li> <a href="{% url 'login' %}?next={{request.path}}"> Zaloguj</a></li>
-			{% endif %}
+				{% endif %}
 			</ul>
+
 		{% endblock %}
 
 
@@ -72,6 +81,7 @@
 						</span>
 					</div>
 			{% endif %}
+
 			{% endblock %}
 
 

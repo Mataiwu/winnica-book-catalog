@@ -20,6 +20,11 @@ urlpatterns=[
 	url(r'^ksiazka/(?P<pk>\d+)/edytuj/$', views.BookUpdate.as_view(),
 		name='book-update'),
 	url(r'^autor/dodaj/$', views.author_create, name='author-create'),
-	url(r'^autor/(?P<pk>\d+)/usun/$', views.AuthorDelete.as_view(), name='author-delete'),
+	url(r'^autor/(?P<pk>\d+)/usun/$', views.AuthorDelete.as_view(),
+	 	name='author-delete'),
+	url(r'^szukaj/', views.BookSearchListView.as_view(), name='search-list-view'),
 	#url(r'^ksiazka/nowa/autor-dodaj/$', views.AuthorCreate.as_view(), name='author-create'),
+
+	url(r'^pop/', views.pop, name='pop'),
+
 	]

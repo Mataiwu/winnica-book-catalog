@@ -1,14 +1,21 @@
 {% extends "base_generic.html" %}
 
+
 {% block content %}
 
-<h2> Pełna lista Książek w Katalogu </h2>
+{% if search_flag %}
+
+HELOU
+
+{% else %}
+
+<h2> Książki: </h2>
 
 {% if book_list %}
 <ul>
 {% for book in book_list %}
 
-<li> 
+<li>
 <a href="{{book.get_absolute_url}}">{{book.title}}</a>
 </li>
 {% endfor %}
@@ -17,5 +24,5 @@
 
 <p>W katalogu nie ma książek</p>
 {% endif %}
-
+{% endif %}
 {% endblock %}

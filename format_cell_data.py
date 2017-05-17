@@ -1,7 +1,13 @@
+import openpyxl
+
 """
-The code below gets data from a cell and puts them into lists. Its purpose is
+The function get_names() gets data from a cell and puts them into lists. Its purpose is
 to separate comma separated values which are stored in a single cell and thus
 can not be exported to a csv file.
+
+function get_first_last() takes data stored in the list (presumably created by
+get names()) and formats it for the purposes of populating the db (author and
+translator models both require first_name, last_name values)
 """
 
 import openpyxl
@@ -28,33 +34,23 @@ def get_names(names):
 
 
 
-def get_first_last(name):
+def get_last_first(name):
         if name[0]==" ":
             name=name[1:]
         if " " in name:
             for i in name:
-                    
+
                 if i==" ":
-                    print("Index: ", name.index(i))
+                    #print("Index: ", name.index(i))
                     last_name=name[:name.index(i)]
                     first_name=name[name.index(i)+1:]
                     return last_name, first_name
-                
+
         else:
-            print("indeks_no_comma")
+            #print("indeks_no_comma")
             last_name=name
             first_name=" "
             return last_name, first_name
-
-
-
-
-
-
-
-
-
-
 
 #function to get data from cells in order to populate the winnica-catalgo db.
 #
@@ -72,16 +68,9 @@ def get_first_last(name):
 #        regal=sheet.cell(row=r, column=8).value
 #        shelf=sheet.cell(row=r, column=9).value
 #        language=sheet.cell(row=r, column=10).value
-#
-def author_s_format(author_s):
-    pass
-#    for authors in author_s:
-        #here we retreive the name from the surname
-#        author, created=Author.object.get_or_create(first_name=" ", last_name=" ")
-#    return author or created
-#book=Book.object.create(title=title, author=author_s_format(author_s), published=published,
-#                        publisher=publisher)
 
+"""
+test instructions:
 wb=openpyxl.load_workbook('data-preparation.xlsx')
 sheet=wb.get_sheet_by_name('Sheet1')
 authors= sheet.cell(row=56, column=2).value
@@ -97,3 +86,4 @@ translators=sheet.cell(row=56, column=6).value
 
 translator_s=get_names(translators)
 print("tłumacz: %s" % translator_s[0])
+"""

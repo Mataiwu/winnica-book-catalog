@@ -132,7 +132,7 @@ NAVIGATION BAR
 ------------------------------------------*/
 nav {
 	padding: 10px;
-
+	font-size:80%;
 	border-bottom: 1px solid #333;
 }
 
@@ -173,6 +173,10 @@ PAGINATION
 /*-------------------------------------
 DETAILS
 ------------------------------------*/
+.search-buttons{
+	display:none;
+}
+
 
 .detail-buttons{
 

@@ -59,7 +59,7 @@ from django.core.urlresolvers import reverse
 
 
 class Book(models.Model):
-	title=models.CharField('Tytuł', max_length=100, help_text="Wpisz tytuł")
+	title=models.CharField('Tytuł', max_length=200, help_text="Wpisz tytuł")
 	author=models.ManyToManyField('Author', help_text="Dodaj autora/kę")
 	translator=models.ManyToManyField('Translator',
 										blank=True,
@@ -74,10 +74,11 @@ class Book(models.Model):
 									blank=True,
 									help_text="Wybierz język")
 	cathegory=models.ManyToManyField('Cathegory', default="---",
+									blank=True,
 									help_text="wybierz kategorię")
 	place=models.ForeignKey('Regal', blank=True, on_delete=models.SET_NULL,
 							null=True, help_text='Podaj regał')
-	shelf=models.CharField('Półka', max_length=2, blank=True, help_text='półka')
+	shelf=models.CharField('Półka', max_length=10, blank=True, help_text='półka')
 
 	class Meta:
 		verbose_name="Książka"
@@ -179,6 +180,6 @@ class Regal(models.Model):
 
 	def __str__(self):
 		return "Regał: "+self.name
-		
+
 	def get_absolute_url(self):
 		return reverse('regal-detail', args=[str(self.id)])
