@@ -1,5 +1,34 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-<p> Tutaj znajdziesz szczegółowe informacje dla książki: {{book.title}}
-{% endblock %}
+
+
+  <section class="details">
+  <h2> <strong>SZCZEGÓŁY</strong> </h2>
+
+
+  <h3><strong>Tytuł: </strong>{{book.title}}</h3>
+
+  <h3><strong> Autor:</strong>
+  {% for author in book.author.all %} <a href="{{author.get_absolute_url}}">{{author}}</a></h3>
+  {% endfor %}
+
+  <p><strong>Wydawca: </strong> {{book.publisher}}</p>
+  <p><strong>Rok wydania: </strong>{{book.published}}</p>
+  <p><strong>ISBN: </strong>{{book.isbn}}</p>
+  <p><strong>Język: </strong>{% for lan in book.language.all %} {{lan}}
+  {% endfor %}</p>
+  <p><strong>Kategoria: </strong>{% for cat in book.category.all %} {{cat}}
+  {% endfor %}</p>
+  <p><strong>Miejsce: </strong>{{book.place}} / Półka: {{book.shelf}}, </p>
+
+  <div class="detail-buttons">
+  <ul>
+  <li><a href="{% url 'book-update' pk=book.id %}"> Edytuj książkę </a></li>
+  <li><a href="{% url 'book-delete' pk=book.id %}"> USUŃ książkę </a></li>
+  <li><a href="{% url 'book-detail-full' pk=book.id %}"> Informacje Szczegółowe </a></li>
+  </ul>
+  </div>
+  </section>
+
+  {% endblock %}

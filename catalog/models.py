@@ -73,7 +73,7 @@ class Book(models.Model):
 	language=models.ManyToManyField('Language',
 									blank=True,
 									help_text="Wybierz język")
-	cathegory=models.ManyToManyField('Cathegory', default="---",
+	category=models.ManyToManyField('Category', default="---",
 									blank=True,
 									help_text="wybierz kategorię")
 	place=models.ForeignKey('Regal', blank=True, on_delete=models.SET_NULL,
@@ -90,11 +90,11 @@ class Book(models.Model):
 	def get_absolute_url(self):
 		return reverse('book-detail', args=[str(self.id)])
 
-	def display_cathegory(self):
+	def display_category(self):
 
-		return ', '.join(cathegory.name
-						for cathegory in self.cathegory.all())
-	display_cathegory.short_description="Kategorie"
+		return ', '.join(category.name
+						for category in self.category.all())
+	display_category.short_description="Kategorie"
 
 	def display_language(self):
 		return ','.join(language.name for language in self.language.all())
@@ -160,9 +160,12 @@ class Language(models.Model):
 		return self.name
 
 
-class Cathegory(models.Model):
-	name=models.CharField('Kategoria', max_length=25, help_text="Wpisz kategorię")
-
+class Category(models.Model):
+	name=models.CharField('Kategoria', max_length=25,
+	 						help_text="Wpisz kategorię")
+	description=models.CharField('Opis', max_length=50,
+									blank=True,
+									help_text="Dodaj opis kategorii")
 	class Meta:
 		verbose_name="Kategoria"
 		verbose_name_plural="Kategorie"

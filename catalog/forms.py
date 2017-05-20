@@ -26,6 +26,15 @@ class PopForm(forms.Form):
 
 		return data
 
+
+
+class CatPopForm(forms.Form):
+	dummy=forms.CharField(help_text="wpisz cokolwiek")
+
+	def clean_dummy(self):
+		data=self.cleaned_data['dummy']
+
+		return data
 #class CreateBookForm(forms.Form):
 	#define fields
 	#clean fields

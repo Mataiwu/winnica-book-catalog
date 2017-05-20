@@ -64,6 +64,11 @@ td{
 	margin-bottom: 3px;
 }
 
+.errorlist{
+	color:red;
+	font-size: 70%;
+}
+
 /*------------------------------------------
 LINKS
 -------------------------------------------*/
@@ -146,6 +151,10 @@ nav {
 	padding: 5px 7px;
 }
 
+#searchform{
+	margin-right: 30px;
+}
+
 /*-------------------------------------------------
 MAIN BOX
 -----------------------------------------*/
@@ -164,10 +173,16 @@ PAGINATION
 
 .pagination {
 
-	width: 50%;
+	width: 70%;
 	margin: 0 auto;
+	margin-bottom: 60px;
 	font-size: 80%;
 	color: #aaa;
+
+}
+
+.pagination form {
+	display: inline-block;
 }
 
 /*-------------------------------------
@@ -204,3 +219,20 @@ DETAILS
 
 
 /*BOOK*/
+
+
+
+
+
+/*------------------------------------------
+SEARCH RESULTS
+-------------------------------------------*/
+
+.search-results-ul p {
+	font-size:80%;
+}
+
+
+.search-results-ul a {
+	font-size:90%;
+}

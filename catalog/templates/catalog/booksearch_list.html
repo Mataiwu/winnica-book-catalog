@@ -3,21 +3,23 @@
 
 {% block content %}
 
-
 <h2> Znalezione:  </h2>
 
 {% if book_list %}
-<ul>
+<ul class="search-results-ul">
 {% for book in book_list %}
 
 <li>
-<a href="{{book.get_absolute_url}}">{{book.title}}</a>
+<p> Tytuł:
+<a href="{{book.get_absolute_url}}">{{book.title}}</a></p>
+<p>Gdzie: {{book.place}}</p>
 </li>
+
 {% endfor %}
 </ul>
 {% else %}
 
-<p>W katalogu nie ma książek</p>
+<p>Nie znaleziono</p>
 
 {% endif %}
 {% endblock %}

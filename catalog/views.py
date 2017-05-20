@@ -1,11 +1,12 @@
 from django.shortcuts import render
 from django.core.urlresolvers import reverse
-from .models import Book, Author, BookInstance, Regal, Translator
+from .models import Book, Author, BookInstance, Regal, Translator, Category
+from .models import Language
 from django.views import generic
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.urls import reverse_lazy
 from django.http import HttpResponseRedirect
-from .forms import CreateAuthorForm, PopForm
+from .forms import CreateAuthorForm, PopForm, CatPopForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .format_cell_data import get_names, get_last_first
@@ -34,7 +35,7 @@ def index(request):
 
 class BookListView(generic.ListView):
 	model=Book
-	paginate_by=15
+	paginate_by=8
 
 class BookDetailView(generic.DetailView):
 	model=Book
@@ -48,14 +49,15 @@ class RegalListView(generic.ListView):
 
 class RegalDetailView(generic.DetailView):
 	model=Regal
-	paginate_by=10
+	paginate_by=8
+
 
 class AuthorDetailView(generic.DetailView):
 	model=Author
 
 class AuthorListView(generic.ListView):
 	model=Author
-	paginate_by=10
+	paginate_by=8
 
 class BookCreate(LoginRequiredMixin, CreateView):
 	model=Book
@@ -119,12 +121,34 @@ class BookSearchListView(BookListView):
 		return result
 #widok do hurtowego pobierania danych
 #
+
+def catpop(request):
+
+
+	if request.method=='POST':
+		form=CatPopForm(request.POST)
+		if form.is_valid():
+			wb=openpyxl.load_workbook('data-preparation.xlsx')
+			sheet=wb.get_sheet_by_name('Sheet2')
+			for r in range (1,26):
+				cat=sheet.cell(row=r, column=1).value
+				cat_full=cat.split()
+				category, created=Category.objects.get_or_create(
+		                                             name=cat_full[0],
+		                                             description=cat_full[1]
+		                                             )
+
+			return HttpResponseRedirect('/catalog')
+	else:
+		form=CatPopForm()
+
+	return render(request, 'catalog/cat_pop_form.html', {'form':form})
+
 def pop(request):
 	"""
 	Add entries to the library from xmls file using openpyxl.
 
 	"""
-
 
 	translator_obj_list=[]
 	author_obj_list=[]
@@ -141,12 +165,12 @@ def pop(request):
 				authors=sheet.cell(row=r, column=2).value
 				published=sheet.cell(row=r, column=3).value
 				publisher=sheet.cell(row=r, column=4).value
-				cathegory=sheet.cell(row=r, column=5).value
+				categ=sheet.cell(row=r, column=5).value
 				translators=sheet.cell(row=r, column=6).value
 				isbn=sheet.cell(row=r, column=7).value
 				regal=sheet.cell(row=r, column=8).value
 				shelf=sheet.cell(row=r, column=9).value
-				language=sheet.cell(row=r, column=10).value
+				lang=sheet.cell(row=r, column=10).value
 
 				authors_list=get_names(authors)
 
@@ -174,15 +198,21 @@ def pop(request):
 						translator_obj_list.append(translator)
 				reg, created=Regal.objects.get_or_create(name=regal)
 
-				book=Book(title=title,
-													published=published,
-													publisher=publisher,
+				category, created=Category.objects.get_or_create(name=categ)
+				cat_obj=category
+				language, created=Language.objects.get_or_create(name=lang)
+				lan_obj=language
+				book=Book(title=title, published=published, publisher=publisher,
 													isbn=isbn,
-		                    						#Language=language,
-													#cathegory=cathegory,
-													place=reg,)
-												#	shelf=shelf)
+		                    						#language=language,
+													#category=category,
+													place=reg,
+													shelf=shelf)
 				book.save()
+
+				book.language.add(lan_obj)
+				book.category.add(cat_obj)
+
 				for author in author_obj_list:
 					book.author.add(author)
 

@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Book, Author, Translator, Cathegory, Language, BookInstance
+from .models import Book, Author, Translator, Category, Language, BookInstance
 from .models import Regal
 
 
@@ -11,7 +11,7 @@ from .models import Regal
 #admin.site.register(Book)
 
 class BookAdmin(admin.ModelAdmin):
-	list_display=('title', 'display_author', 'display_cathegory', 'display_language')
+	list_display=('title', 'display_author', 'display_category', 'display_language')
 
 admin.site.register(Book,BookAdmin)
 
@@ -28,7 +28,7 @@ admin.site.register(BookInstance)
 
 admin.site.register(Author)
 admin.site.register(Regal)
-admin.site.register(Cathegory)
+admin.site.register(Category)
 admin.site.register(Translator)
 admin.site.register(Language)
 # Register your models here.

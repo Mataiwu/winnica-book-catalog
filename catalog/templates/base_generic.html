@@ -30,7 +30,8 @@
 			<li><a href="{% url 'index'%}">Strona główna</a></li>
 			<li><a href="{% url 'books'%}">Książki</a></li>
 
-			<li><a href="{% url 'regals'%}">Regały</a></li>
+			<!---<li><a href="{% url 'regals'%}">Regały</a></li>--->
+
 			<li><a href="{% url 'authors' %}"> Autorzy </a></li>
 			<li><a href="{% url 'book-create' %}"> Dodaj książkę </a></li>
 			<li>
@@ -75,10 +76,17 @@
 							<span class="page-current">
 								Strona {{ page_obj.number }} z {{ page_obj.paginator.num_pages }}.
 							</span>
+
 							{% if page_obj.has_next %}
 								<a href="{{ requerst.path }}?page={{ page_obj.next_page_number }}"> następna</a>
 							{%endif %}
 						</span>
+						<span class="go-to-page">
+							<form class="paginator-form" action="index.html" method="get">
+								<button class="search-buttons" type="submit"></button>
+								<input class="paginator-field" id="paginator-box" name=page type="text" placeholder="idź do">
+							</form>
+					</span>
 					</div>
 			{% endif %}
 

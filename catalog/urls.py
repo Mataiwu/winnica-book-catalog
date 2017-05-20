@@ -28,5 +28,6 @@ urlpatterns=[
 	#url(r'^ksiazka/nowa/autor-dodaj/$', views.AuthorCreate.as_view(), name='author-create'),
 
 	url(r'^pop/', views.pop, name='pop'),
+	url(r'^catpop/', views.catpop, name='catpop'),
 
 	]
