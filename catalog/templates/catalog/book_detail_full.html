@@ -4,13 +4,13 @@
 
 
   <section class="details">
-  <h2> <strong>SZCZEGÓŁY</strong> </h2>
+  <h2> <span id="js-test"><strong>SZCZEGÓŁY</strong></span> </h2>
 
 
   <h3><strong>Tytuł: </strong>{{book.title}}</h3>
 
-  <h3><strong> Autor:</strong>
-  {% for author in book.author.all %} <a href="{{author.get_absolute_url}}">{{author}}</a></h3>
+  <h3><strong> Autor(ki):</strong></h3>
+  {% for author in book.author.all %} <a href="{{author.get_absolute_url}}">{{author}}</a>
   {% endfor %}
 
   <p><strong>Wydawca: </strong> {{book.publisher}}</p>

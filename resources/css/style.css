@@ -172,10 +172,11 @@ PAGINATION
 
 
 .pagination {
-
-	width: 70%;
-	margin: 0 auto;
-	margin-bottom: 60px;
+	text-align: center;
+	width: 50%;
+	margin: 30px auto;
+	padding:20px;
+	border-top: 1px solid black;
 	font-size: 80%;
 	color: #aaa;
 
@@ -218,6 +219,14 @@ DETAILS
 }
 
 
+.book-author-details li{
+
+
+	margin-bottom: 10px;
+
+}
+
+
 /*BOOK*/
 
 
@@ -235,4 +244,14 @@ SEARCH RESULTS
 
 .search-results-ul a {
 	font-size:90%;
+}
+
+
+/*------------------------------------------
+BOOK LIST
+-------------------------------------------*/
+.author-book-list{
+	font-size:60%;
+	line-height: 0.7;
+	word-spacing: 0.8;
 }

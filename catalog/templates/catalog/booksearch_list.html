@@ -12,14 +12,14 @@
 <li>
 <p> Tytuł:
 <a href="{{book.get_absolute_url}}">{{book.title}}</a></p>
-<p>Gdzie: {{book.place}}</p>
+<p>Gdzie: {{book.place}} / Półka: {{book.shelf}}</p>
 </li>
 
 {% endfor %}
 </ul>
 {% else %}
 
-<p>Nie znaleziono</p>
+<p>Nie znaleziono książek, których tytuł zawiera wskazane słowo, lub słowa</p>
 
 {% endif %}
 {% endblock %}

@@ -13,8 +13,8 @@
 <div class= "col span-1-of-2">
 <h3>Książki:</h3>
 {% for book in author.book_set.all %}
-<ul>
-<li>
+<ul class="book-author-details">
+<li >
 <a href="{{book.get_absolute_url}}">{{book.title}}</a>
 </li>
 </ul>

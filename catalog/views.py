@@ -24,11 +24,25 @@ def index(request):
 	num_books=Book.objects.count()
 	num_instances=BookInstance.objects.count()
 	num_authors=Author.objects.count()
+	num_translators=Translator.objects.count()
+	pl=Language(name="polski").name
+	fr=Language(name="francuski").name
+	books_fr=Book.objects.filter(language__name=fr).count()
+	books_pl=Book.objects.filter(language__name=pl).count()
+	ang=Language(name="angielski").name
+	books_ang=Book.objects.filter(language__name=ang).count()
+	niem=Language(name="niemiecki").name
+	books_niem=Book.objects.filter(language__name=niem).count()
 
+	#num_pl=Book.objects.
 	context={
 			'num_books': num_books,
 			'num_authors':num_authors,
-			'num_instances':num_instances
+			'num_instances':num_instances,
+			'books_fr':books_fr,
+			'books_pl':books_pl,
+			'books_ang':books_ang,
+			'books_niem':books_niem,
 	}
 
 	return render(request, 'index.html', context)
@@ -61,7 +75,7 @@ class AuthorListView(generic.ListView):
 
 class BookCreate(LoginRequiredMixin, CreateView):
 	model=Book
-	fields=['author', 'title', 'published', 'publisher', 'cathegory']
+	fields=['author', 'title', 'published', 'publisher', 'category']
 	redirect_field_name="book-create"
 
 class BookDelete(DeleteView):

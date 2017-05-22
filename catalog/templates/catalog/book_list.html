@@ -17,7 +17,14 @@ HELOU
 
 <li>
 <a href="{{book.get_absolute_url}}">{{book.title}}</a>
+<span class="author-book-list" >
+{% for author in book.author.all %}
+ <a href="{{author.get_absolute_url}}">{{author.last_name}}</a>
+{% endfor %}
+</span>
 </li>
+
+
 {% endfor %}
 </ul>
 {% else %}
