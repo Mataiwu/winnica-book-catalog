@@ -1,0 +1,257 @@
+/*---------------------------------------------
+BASIC SETUP
+--------------------------------------------*/
+*{
+margin:0;
+padding:0;
+}
+
+html{
+	background-color:#fff;
+	color:#333;
+	font-family: 'Lato', 'Arial', sans-serif;
+	font-size:20px;
+	text-rendering:optimizeLegibility;
+}
+
+.clearfix:after{
+	content:"";
+	display:table;
+	clear:both;
+}
+
+/*-------------------------------------------------------
+REUSABLE ELEMENTS
+------------------------------------------------*/
+
+h1, h2, h3 {
+	padding: 5px;
+}
+
+ul {
+
+ 	list-style: none;
+
+}
+
+li {
+	padding:5px;
+
+}
+
+p {
+	padding:5px;
+	line-height: 1.5;
+
+}
+label {
+	font-size: 80%
+}
+
+
+
+td{
+	padding-top: 3px;
+	padding-left: 10px;
+
+
+}
+.helptext {
+	font-size: 50%;
+	border-bottom: 1px solid #ccc;
+	border-left:1px solid #ccc;
+	padding:3px;
+	margin-bottom: 3px;
+}
+
+.errorlist{
+	color:red;
+	font-size: 70%;
+}
+
+/*------------------------------------------
+LINKS
+-------------------------------------------*/
+a{
+	font-size: 80%;
+	margin: 0 10px;
+	padding: 5px;
+
+	border: none;
+}
+
+a:link,
+a:visited{
+
+	color: #555;
+	text-decoration:none;
+
+}
+
+a:hover,
+a:active{
+color: #333;
+
+}
+
+.back-button a {
+	border:1px solid #333;
+	display: inline-block;
+	margin: 5px;
+	margin-left: 0px;
+
+}
+
+input[type=submit] {
+	background-color: #fff;
+	color: #555;
+	display: inline-block;
+	border: 1px solid #333;
+	padding: 3px;
+	font-size: 80%
+	}
+input[type=submit]:hover,
+input[type=submit]:active {
+	background-color: #ddd;
+}
+
+
+/*--------------------------------------------
+CONTAINER
+---------------------------------------------*/
+
+.container{
+	width:70%;
+	margin: 0 auto;
+}
+
+/*--------------------------------------------
+HEADER BOX
+---------------------------------------------*/
+.header-box{
+padding: 10px;
+
+}
+/*---------------------------------------------
+NAVIGATION BAR
+------------------------------------------*/
+nav {
+	padding: 10px;
+	font-size:80%;
+	border-bottom: 1px solid #333;
+}
+
+.navigation-panel ul li{
+	display: inline-block;
+}
+
+#username {
+	border-left: 1px solid #aaa;
+	border-bottom: 1px solid #aaa;
+	padding: 5px 7px;
+}
+
+#searchform{
+	margin-right: 30px;
+}
+
+/*-------------------------------------------------
+MAIN BOX
+-----------------------------------------*/
+
+.main-box {
+
+	padding:10px;
+}
+
+
+
+/*-------------------------------------
+PAGINATION
+------------------------------------*/
+
+
+.pagination {
+	text-align: center;
+	width: 50%;
+	margin: 30px auto;
+	padding:20px;
+	border-top: 1px solid black;
+	font-size: 80%;
+	color: #aaa;
+
+}
+
+.pagination form {
+	display: inline-block;
+}
+
+/*-------------------------------------
+DETAILS
+------------------------------------*/
+.search-buttons{
+	display:none;
+}
+
+
+.detail-buttons{
+
+	margin-top: 20px;
+
+
+}
+.detail-buttons ul li{
+	display: inline-block;
+		margin-right: 15px;
+		background-color: #fff;
+		color: #555;
+		display: inline-block;
+		border: 1px solid #333;
+		padding: 3px;
+		font-size: 80%
+
+}
+
+/*AUTHOR*/
+
+.author-detail-box {
+	width:70%;
+}
+
+
+.book-author-details li{
+
+
+	margin-bottom: 10px;
+
+}
+
+
+/*BOOK*/
+
+
+
+
+
+/*------------------------------------------
+SEARCH RESULTS
+-------------------------------------------*/
+
+.search-results-ul p {
+	font-size:80%;
+}
+
+
+.search-results-ul a {
+	font-size:90%;
+}
+
+
+/*------------------------------------------
+BOOK LIST
+-------------------------------------------*/
+.author-book-list{
+	font-size:60%;
+	line-height: 0.7;
+	word-spacing: 0.8;
+}
