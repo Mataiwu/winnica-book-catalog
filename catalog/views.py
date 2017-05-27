@@ -87,6 +87,7 @@ class BookUpdate(UpdateView):
 	fields='__all__'
 
 @login_required
+#this comment is for nowa_galaz 
 def author_create(request):
 	if request.method=='POST':
 		form=CreateAuthorForm(request.POST)
