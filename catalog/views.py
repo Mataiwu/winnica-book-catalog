@@ -89,6 +89,8 @@ class BookUpdate(UpdateView):
 @login_required
 
 #even more comments - made on branch test_branch1 
+#this comment is for nowa_galaz
+#this one too
 def author_create(request):
 	if request.method=='POST':
 		form=CreateAuthorForm(request.POST)
