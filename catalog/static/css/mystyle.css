@@ -1,0 +1,44 @@
+.mytable {
+
+  width: 80%;
+  margin: 40px auto;
+}
+
+.centered {
+
+  text-align: center;
+
+}
+
+.text-box {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.intro {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.7)), url(../img/fog.jpg);
+	background-size:cover;
+  color: #eee;
+	background-position: :center;
+
+	background-attachment: fixed;
+  padding-bottom: 30px;
+}
+
+
+#main-title{
+  font-size: 500%;
+  margin-top:60px;
+}
+
+#intro-text {
+  font-weight: 100;
+}
+
+
+.my-nav{
+  margin-bottom: 0;
+  border-radius: 0;
+  background-color: transparent;
+  color: #eee;
+}
