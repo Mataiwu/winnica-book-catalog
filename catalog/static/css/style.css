@@ -180,6 +180,9 @@ nav {
 /*-------------------------------------------------
 MAIN BOX
 -----------------------------------------*/
+.myh{
+	text-align: center;
+}
 .myjumbo{
 	background-color: #fff;
 	border: solid 1px grey;
@@ -276,7 +279,7 @@ SEARCH RESULTS
 
 
 .search-results-ul a {
-	
+
 }
 
 

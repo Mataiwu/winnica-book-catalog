@@ -2,31 +2,32 @@
 
 
 {% block content %}
-
 {% if search_flag %}
-
-HELOU
-
+SEARCHFLAG ON
 {% else %}
-
-<h2> Książki: </h2>
+<h2 class="myh"> Książki: </h2>
 
 {% if book_list %}
-<ul>
+<table class="table table-striped">
+<thead> <th>Tytuł</th><th>Autor_ka</th></thead>
 {% for book in book_list %}
-
-<li>
+<tr>
+  <td>
 <a href="{{book.get_absolute_url}}">{{book.title}}</a>
-<span class="author-book-list" >
+</td>
+<td>
+
 {% for author in book.author.all %}
- <a href="{{author.get_absolute_url}}">{{author.last_name}}</a>
+ <a href="{{author.get_absolute_url}}"> {{author.last_name}}</a>;
 {% endfor %}
-</span>
-</li>
+</td>
+
+
+</tr>
 
 
 {% endfor %}
-</ul>
+</table>
 {% else %}
 
 <p>W katalogu nie ma książek</p>

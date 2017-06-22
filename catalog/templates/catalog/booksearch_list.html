@@ -3,23 +3,27 @@
 
 {% block content %}
 
-<h2> Znalezione:  </h2>
+
 
 {% if book_list %}
-<ul class="search-results-ul">
+<h2> Znalezione:  </h2>
+<table class="table table-striped">
+
 {% for book in book_list %}
 
-<li>
+<tr>
+  <td>
 <p> Tytuł:
 <a href="{{book.get_absolute_url}}">{{book.title}}</a></p>
 <p>Gdzie: {{book.place}} / Półka: {{book.shelf}}</p>
-</li>
+</td>
+</tr>
 
 {% endfor %}
-</ul>
+<table>
 {% else %}
 
-<p>Nie znaleziono książek, których tytuł zawiera wskazane słowo, lub słowa</p>
+<h2>Nie znaleziono książek, których tytuł zawiera wskazane słowo, lub słowa</h2>
 
 {% endif %}
 {% endblock %}

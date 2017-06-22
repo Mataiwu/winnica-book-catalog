@@ -1,8 +1,10 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-<h1>Winnicki katalog książek</h1>
 
+<h1 class="myh">Winnicki katalog książek</h1>
+
+<div class="container">
 <h3>W katalogu znajduje się obecnie:</h3>
 <ul>
 <li><strong>Liczba książek: </strong> {{ num_books }}</li>
@@ -13,5 +15,5 @@
 <li><strong>Liczba książek w języku francuskim: </strong> {{ books_fr }}</li>
 <li><strong>Liczba książek w języku niemieckim: </strong> {{ books_niem }}</li>
 </ul>
-
+</div>
 {% endblock %}

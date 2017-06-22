@@ -49,7 +49,7 @@ def index(request):
 
 class BookListView(generic.ListView):
 	model=Book
-	paginate_by=8
+	paginate_by=6
 
 class BookDetailView(generic.DetailView):
 	model=Book
@@ -63,7 +63,7 @@ class RegalListView(generic.ListView):
 
 class RegalDetailView(generic.DetailView):
 	model=Regal
-	paginate_by=8
+	paginate_by=6
 
 
 class AuthorDetailView(generic.DetailView):
@@ -71,7 +71,7 @@ class AuthorDetailView(generic.DetailView):
 
 class AuthorListView(generic.ListView):
 	model=Author
-	paginate_by=8
+	paginate_by=6
 
 class BookCreate(LoginRequiredMixin, CreateView):
 	model=Book
@@ -88,7 +88,7 @@ class BookUpdate(UpdateView):
 
 @login_required
 
-#even more comments - made on branch test_branch1 
+#even more comments - made on branch test_branch1
 #this comment is for nowa_galaz
 #this one too
 def author_create(request):

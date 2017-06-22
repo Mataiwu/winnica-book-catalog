@@ -1,24 +1,26 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-
-<h2> Autorki_rzy</h2>
+<div class="container">
+<h2 class="myh"> Autorki_rzy</h2>
 
 {% if author_list %}
 
-<ul>
+<table class="table table-striped">
 {% for author in author_list %}
-<li >
-<a class="authors-list-q" href="{{ author.get_absolute_url }}">{{author}}</a><br>
-
+<tr>
+  <td>
+<a class="authors-list-q" href="{{ author.get_absolute_url }}">{{author}}</a></br>
+</td>
+</tr>
 
 {% endfor %}
-</li>
+</table>
 
 {% else %}
 
 <p>Nie ma tu żadnych autorek ani autorów</p>
 
 {% endif %}
-
+</div>
 {% endblock %}
