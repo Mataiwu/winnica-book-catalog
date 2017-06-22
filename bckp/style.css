@@ -6,11 +6,8 @@ margin:0;
 padding:0;
 }
 
-body {
-	background-color: #fbfbfb;
-}
 html{
-	background-color: #fbfbfb;
+	background-color:#fff;
 	color:#333;
 	font-family: 'Lato', 'Arial', sans-serif;
 	font-size:20px;
@@ -75,8 +72,8 @@ td{
 /*------------------------------------------
 LINKS
 -------------------------------------------*/
-/*a{
-
+a{
+	font-size: 80%;
 	margin: 0 10px;
 	padding: 5px;
 	text-decoration: none;
@@ -104,7 +101,7 @@ transition: color 0.5s;
 	margin-left: 0px;
 
 }
-*/
+
 input[type=submit] {
 	background-color: #fff;
 	color: #555;
@@ -140,19 +137,10 @@ padding: 10px;
 /*---------------------------------------------
 NAVIGATION BAR
 ------------------------------------------*/
-.mynavbar {
-	border-radius: 0;
-	border-bottom: 1px solid grey;
-
-}
-
-.mynavbar #myband {
-	color: red;
-}
 nav {
 	padding: 10px;
-
-	border-bottom: 1px solid black;
+	font-size:80%;
+	border-bottom: 1px solid #333;
 }
 
 .navigation-panel ul li{
@@ -169,22 +157,10 @@ nav {
 	margin-right: 30px;
 }
 
-.myform-control {
-	border: solid 1px grey;
-	border-radius: 0;
-}
-
-.mynavbar-brand {
-	color: #444 !important;
-}
 /*-------------------------------------------------
 MAIN BOX
 -----------------------------------------*/
-.myjumbo{
-	background-color: #fff;
-	border: solid 1px grey;
 
-}
 .main-box {
 
 	padding:10px;
@@ -199,13 +175,12 @@ PAGINATION
 
 .pagination {
 	text-align: center;
-	width: 80%;
+	width: 50%;
 	margin: 30px auto;
 	padding:20px;
-	border-top: 1px solid grey;
+	border-top: 1px solid black;
 	font-size: 80%;
 	color: #aaa;
-	border-radius: 0;
 
 }
 
@@ -216,7 +191,6 @@ PAGINATION
 /*-------------------------------------
 DETAILS
 ------------------------------------*/
-
 .search-buttons{
 	display:none;
 }
@@ -271,12 +245,12 @@ SEARCH RESULTS
 -------------------------------------------*/
 
 .search-results-ul p {
-
+	font-size:80%;
 }
 
 
 .search-results-ul a {
-	
+	font-size:90%;
 }
 
 
@@ -287,10 +261,4 @@ BOOK LIST
 	font-size:60%;
 	line-height: 0.7;
 	word-spacing: 0.8;
-
-}
-
-.red {
-
-	color: red;
 }

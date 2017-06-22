@@ -19,7 +19,7 @@
 	</head>
 
 	<body>
-		<nav class="navbar navbar-default">
+		<nav class="navbar navbar-default mynavbar">
 			{% block sidebar %}
 	<div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -30,7 +30,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Winnicki Katalog Książek </br> <small>(wersja beta)</small></a>
+      <span class="navbar-brand mynavbar-brand" id="mybrand">Winnicki Katalog Książek </br> <small>(wersja beta)</small></span>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -49,7 +49,7 @@
 					<form class="navbar-form navbar-left"  id="searchform" action={% url 'search-list-view' %} method="get">
 						<div class="form-group">
 						<button class="search-buttons" type="submit"></button>
-						<input class=" form-control search-field" id="search-box" name=q type="text" placeholder="wyszukaj tytuł">
+						<input class=" form-control search-field myform-control" id="search-box" name=q type="text" placeholder="wyszukaj tytuł">
 					</div>
 					</form>
 
@@ -71,14 +71,14 @@
 </nav>
 
 
-		<div class="container">
-		<div class="header-box">
+		<div class="container jumbotron myjumbo">
+		<!--<div class="header-box">
 		{% block header %}
 
 		<h1><strong>Winnicki Katalog książek</strong> (wersja beta)</h1>
 
 		{% endblock %}
-		</div>
+	</div>-->
 
 				<section class="main-box">
 
@@ -93,26 +93,28 @@
 
 			{% block pagination %}
 				{% if is_paginated %}
+					<div class="container">
 					<div class="pagination">
 						<span class="page-links">
 							{% if page_obj.has_previous %}
-								<a href="{{ request.path }}?page={{ page_obj.previous_page_number }}">poprzedna</a>
+								<a href="{{ request.path }}?page={{ page_obj.previous_page_number }}">poprzednia</a>
 							{% endif %}
 							<span class="page-current">
-								Strona {{ page_obj.number }} z {{ page_obj.paginator.num_pages }}.
+								strona {{ page_obj.number }} z {{ page_obj.paginator.num_pages }}
 							</span>
 
 							{% if page_obj.has_next %}
 								<a href="{{ requerst.path }}?page={{ page_obj.next_page_number }}"> następna</a>
 							{%endif %}
 						</span>
-						<span class="go-to-page">
+						<!--<span class="go-to-page">
 							<form class="paginator-form" action="index.html" method="get">
 								<button class="search-buttons" type="submit"></button>
 								<input class="paginator-field" id="paginator-box" name=page type="text" placeholder="idź do">
-							</form>
+							</form>-->
 					</span>
 					</div>
+				</div>
 			{% endif %}
 
 			{% endblock %}
