@@ -114,7 +114,7 @@ def author_create(request):
 	return render(request, 'catalog/author_get_create.html', {'form':form})
 
 
-class AuthorDelete(DeleteView):
+class AuthorDelete(LoginRequiredMixin, DeleteView):
 	model=Author
 	success_url=reverse_lazy('authors')
 
