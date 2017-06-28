@@ -1,0 +1,42 @@
+/* Ipads big tablet to 1200 (smaller 1140px)) from 1024 to 1200*/
+@media only screen and (max-width: 1200px) {
+}
+
+@media only screen and (max-width: 1040px) {
+  #mybrand {
+    display: none;
+  }
+
+}
+
+/* Ipads and tablets (portrait view) from 768 to 1023*/
+@media only screen and (max-width: 1023px) {
+
+
+}
+
+
+
+/* larger phones and small tablets from 481 to 767*/
+@media only screen and (max-width: 768px) {
+
+
+  #nav-list-left{
+    width:auto;
+  }
+
+
+
+/* small phones from 0-480*/
+@media only screen and (max-width: 480px) {
+
+  h3 {
+    font-size: 130%;
+    text-align: center;
+  }
+  #index-list {
+    width: 120px;
+  	margin:0px;
+    padding:20px;
+
+}
