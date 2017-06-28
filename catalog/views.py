@@ -78,12 +78,16 @@ class BookCreate(LoginRequiredMixin, CreateView):
 	fields=['author', 'title', 'published', 'publisher', 'category']
 	redirect_field_name="book-create"
 
-class BookDelete(DeleteView):
+class BookDelete(LoginRequiredMixin, DeleteView):
 	model=Book
 	success_url=reverse_lazy('index')
 
-class BookUpdate(UpdateView):
+class BookUpdate(LoginRequiredMixin, UpdateView):
 	model=Book
+	fields='__all__'
+
+class AuthorUpdate(LoginRequiredMixin, UpdateView):
+	model=Author
 	fields='__all__'
 
 @login_required

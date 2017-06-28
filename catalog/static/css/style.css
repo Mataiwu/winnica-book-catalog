@@ -120,6 +120,39 @@ input[type=submit]:active {
 
 
 
+/*--------------------------------------------
+INDEX.HTML
+---------------------------------------------*/
+#index {
+	padding-bottom: 10px;
+	
+	background-image: url(../img/o-books-facebook.jpg);
+	background-size: cover;
+	overflow: visible;
+}
+
+
+#index-list {
+	margin-left: 50px;
+	margin-right:0px;
+	width: 50%;
+
+}
+
+#index-list li {
+
+}
+
+.alpha60 {
+    /* Fallback for web browsers that don't support RGBa */
+    background-color: rgb(255, 255, 255);
+    /* RGBa with 0.6 opacity */
+    background-color: rgba(255, 255, 255, 0.6);
+    /* For IE 5.5 - 7*/
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+    /* For IE 8*/
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+}
 
 /*--------------------------------------------
 CONTAINER
@@ -160,6 +193,7 @@ nav {
 }
 
 #username {
+	margin-top: 15px;
 	border-left: 1px solid #aaa;
 	border-bottom: 1px solid #aaa;
 	padding: 5px 7px;
@@ -225,8 +259,10 @@ DETAILS
 }
 
 
+
 .detail-buttons{
 
+	color: grey;
 	margin-top: 20px;
 
 
@@ -296,4 +332,9 @@ BOOK LIST
 .red {
 
 	color: red;
+}
+
+
+.detail-buttons-color {
+
 }

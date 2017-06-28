@@ -1,12 +1,12 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
+<div id="index">
+<h1 class="myh">Winnicki Katalog Książek</h1>
 
-<h1 class="myh">Winnicki katalog książek</h1>
-
-<div class="container">
+<div class="container" >
 <h3>W katalogu znajduje się obecnie:</h3>
-<ul>
+<ul class="alpha60" id="index-list">
 <li><strong>Liczba książek: </strong> {{ num_books }}</li>
 <li><strong>Liczba autorek: </strong> {{ num_authors }}</li>
 
@@ -15,5 +15,6 @@
 <li><strong>Liczba książek w języku francuskim: </strong> {{ books_fr }}</li>
 <li><strong>Liczba książek w języku niemieckim: </strong> {{ books_niem }}</li>
 </ul>
+</div>
 </div>
 {% endblock %}

@@ -130,7 +130,10 @@ class Author(models.Model):
 		verbose_name_plural="Autorki_rzy"
 
 	def __str__(self):
-		return '%s, %s'%(self.last_name, self.first_name)
+		if len(self.first_name)<=1:
+			return self.last_name
+		else:
+			return '%s, %s.'%(self.last_name, self.first_name[0])
 
 	def get_absolute_url(self):
 		return reverse('author-detail', args=[str(self.id)])

@@ -24,9 +24,9 @@
 
   <div class="detail-buttons">
   <ul>
-  <li><a href="{% url 'book-update' pk=book.id %}"> Edytuj książkę </a></li>
-  <li><a href="{% url 'book-delete' pk=book.id %}"> USUŃ książkę </a></li>
-  <li><a href="{% url 'book-detail-full' pk=book.id %}"> Informacje Szczegółowe </a></li>
+  <li><a class="detail-buttons-color" href="{% url 'book-update' pk=book.id %}"> Edytuj książkę </a></li>
+  <li><a class="red" href="{% url 'book-delete' pk=book.id %}"> Usuń książkę </a></li>
+  <li><a class="detail-buttons-color" href="{% url 'book-detail-full' pk=book.id %}"> Informacje Szczegółowe </a></li>
   </ul>
   </div>
   </section>

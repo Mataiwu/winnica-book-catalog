@@ -148,6 +148,7 @@ nav {
 }
 
 #username {
+	margin-top: 20px;
 	border-left: 1px solid #aaa;
 	border-bottom: 1px solid #aaa;
 	padding: 5px 7px;
