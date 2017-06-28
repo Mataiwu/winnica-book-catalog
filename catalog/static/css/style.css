@@ -125,7 +125,7 @@ INDEX.HTML
 ---------------------------------------------*/
 #index {
 	padding-bottom: 10px;
-	
+
 	background-image: url(../img/o-books-facebook.jpg);
 	background-size: cover;
 	overflow: visible;
@@ -136,12 +136,11 @@ INDEX.HTML
 	margin-left: 50px;
 	margin-right:0px;
 	width: 50%;
+	
 
 }
 
-#index-list li {
 
-}
 
 .alpha60 {
     /* Fallback for web browsers that don't support RGBa */
