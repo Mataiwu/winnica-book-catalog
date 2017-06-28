@@ -24,8 +24,9 @@ SECRET_KEY = 'jb#e!%!u9g+6=@d7dn7p_njju-po%q(jnfar5h%o=2n^mneat2'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+SECURE_SSL_REDIRECT=True
 
-ALLOWED_HOSTS = ['127.0.0.1','192.168.1.104', '111.222.80.27',]
+ALLOWED_HOSTS = ['127.0.0.1','192.168.1.104', '111.222.80.27', 'ksiazki.pythonanywhere.com']
 
 
 # Application definition
