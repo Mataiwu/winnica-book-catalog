@@ -136,7 +136,7 @@ INDEX.HTML
 	margin-left: 50px;
 	margin-right:0px;
 	width: 50%;
-	
+
 
 }
 
@@ -266,15 +266,29 @@ DETAILS
 
 
 }
-.detail-buttons ul li{
+.detail-buttons ul li {
 	display: inline-block;
 		margin-right: 15px;
 		background-color: #fff;
-		color: #555;
+
 		display: inline-block;
 		border: 1px solid #333;
 		padding: 3px;
-		font-size: 80%
+		font-size: 80%;
+		margin-bottom: 10px;
+		margin-left: 5px;
+
+}
+
+.detail-buttons ul li a {
+	color: #555;
+	text-decoration: none;
+}
+
+
+.detail-buttons ul li a:hover,
+.detail-buttons ul li a:active{
+color: #333;
 
 }
 
@@ -330,7 +344,7 @@ BOOK LIST
 
 .red {
 
-	color: red;
+	color: red !important;
 }
 
 
