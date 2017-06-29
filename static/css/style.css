@@ -6,8 +6,11 @@ margin:0;
 padding:0;
 }
 
+body {
+	background-color: #fbfbfb;
+}
 html{
-	background-color:#fff;
+	background-color: #fbfbfb;
 	color:#333;
 	font-family: 'Lato', 'Arial', sans-serif;
 	font-size:20px;
@@ -72,8 +75,8 @@ td{
 /*------------------------------------------
 LINKS
 -------------------------------------------*/
-a{
-	font-size: 80%;
+/*a{
+
 	margin: 0 10px;
 	padding: 5px;
 	text-decoration: none;
@@ -101,7 +104,7 @@ transition: color 0.5s;
 	margin-left: 0px;
 
 }
-
+*/
 input[type=submit] {
 	background-color: #fff;
 	color: #555;
@@ -117,6 +120,38 @@ input[type=submit]:active {
 
 
 
+/*--------------------------------------------
+INDEX.HTML
+---------------------------------------------*/
+#index {
+	padding-bottom: 10px;
+
+	background-image: url(../img/o-books-facebook.jpg);
+	background-size: cover;
+	overflow: visible;
+}
+
+
+#index-list {
+	margin-left: 50px;
+	margin-right:0px;
+	width: 50%;
+	
+
+}
+
+
+
+.alpha60 {
+    /* Fallback for web browsers that don't support RGBa */
+    background-color: rgb(255, 255, 255);
+    /* RGBa with 0.6 opacity */
+    background-color: rgba(255, 255, 255, 0.6);
+    /* For IE 5.5 - 7*/
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+    /* For IE 8*/
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+}
 
 /*--------------------------------------------
 CONTAINER
@@ -137,10 +172,19 @@ padding: 10px;
 /*---------------------------------------------
 NAVIGATION BAR
 ------------------------------------------*/
+.mynavbar {
+	border-radius: 0;
+	border-bottom: 1px solid grey;
+
+}
+
+.mynavbar #myband {
+	color: red;
+}
 nav {
 	padding: 10px;
-	font-size:80%;
-	border-bottom: 1px solid #333;
+
+	border-bottom: 1px solid black;
 }
 
 .navigation-panel ul li{
@@ -148,7 +192,7 @@ nav {
 }
 
 #username {
-	margin-top: 20px;
+	margin-top: 15px;
 	border-left: 1px solid #aaa;
 	border-bottom: 1px solid #aaa;
 	padding: 5px 7px;
@@ -158,10 +202,25 @@ nav {
 	margin-right: 30px;
 }
 
+.myform-control {
+	border: solid 1px grey;
+	border-radius: 0;
+}
+
+.mynavbar-brand {
+	color: #444 !important;
+}
 /*-------------------------------------------------
 MAIN BOX
 -----------------------------------------*/
+.myh{
+	text-align: center;
+}
+.myjumbo{
+	background-color: #fff;
+	border: solid 1px grey;
 
+}
 .main-box {
 
 	padding:10px;
@@ -176,12 +235,13 @@ PAGINATION
 
 .pagination {
 	text-align: center;
-	width: 50%;
+	width: 80%;
 	margin: 30px auto;
 	padding:20px;
-	border-top: 1px solid black;
+	border-top: 1px solid grey;
 	font-size: 80%;
 	color: #aaa;
+	border-radius: 0;
 
 }
 
@@ -192,13 +252,16 @@ PAGINATION
 /*-------------------------------------
 DETAILS
 ------------------------------------*/
+
 .search-buttons{
 	display:none;
 }
 
 
+
 .detail-buttons{
 
+	color: grey;
 	margin-top: 20px;
 
 
@@ -246,12 +309,12 @@ SEARCH RESULTS
 -------------------------------------------*/
 
 .search-results-ul p {
-	font-size:80%;
+
 }
 
 
 .search-results-ul a {
-	font-size:90%;
+
 }
 
 
@@ -262,4 +325,15 @@ BOOK LIST
 	font-size:60%;
 	line-height: 0.7;
 	word-spacing: 0.8;
+
+}
+
+.red {
+
+	color: red;
+}
+
+
+.detail-buttons-color {
+
 }
